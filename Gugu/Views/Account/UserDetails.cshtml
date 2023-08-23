@@ -1,0 +1,27 @@
+﻿@model ApplicationUser
+
+<h2>User Details</h2>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-3">Full Name:</dt>
+        <dd class="col-sm-9">@Model.FullName</dd>
+
+        <dt class="col-sm-3">Email:</dt>
+        <dd class="col-sm-9">@Model.Email</dd>
+
+        <dt class="col-sm-3">Phone Number:</dt>
+        <dd class="col-sm-9">@Model.PhoneNumber</dd>
+
+        <dt class="col-sm-3">Date of Birth:</dt>
+        <dd class="col-sm-9">@Model.DateofBirth.ToShortDateString()</dd>
+
+        <dt class="col-sm-3">Username:</dt>
+        <dd class="col-sm-9">@Model.UserName</dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-controller="Account" asp-action="Users">Back to Users</a>
+</div>
+

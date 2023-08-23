@@ -1,0 +1,86 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.back {
+    padding-top: 50px;
+    padding-bottom:300px;
+    background-repeat: no-repeat;
+    background-image: url('cook.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: auto;
+}
+
+.cover-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 300px;
+    background-color: #f3f3f3;
+}
+
+.cover-image-preview {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.body {
+    font-family: Arial, sans-serif;
+    background-color: #4169E1;
+    margin: 0;
+    padding: 0;
+}
+
+.icontainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.inavbar {
+    background-color: #21C4D3;
+    color: #21C4D3;
+    padding: 10px;
+}
+
+    .inavbar a {
+        color: #ffffff;
+        text-decoration: none;
+        margin-right: 200px;
+    }
+
+        .inavbar a:hover {
+            text-decoration: underline;
+        }

@@ -1,0 +1,74 @@
+﻿@using Gugu.Models
+﻿
+@model IEnumerable<Store>
+
+@{
+    ViewData["Title"] = "List of Stores";
+}
+
+@*<style>
+table, th, td {
+  border: 10px solid;
+}
+</style>*@
+
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+<table class="table table-bordered table-dark table-hover mt-4 mb-4">
+
+            <thead>
+                <tr class="text-center">
+                    <th class="col-2">@Html.DisplayNameFor(model => model.Logo)</th>
+                     <th class="col-2">@Html.DisplayNameFor(model => model.Name)</th>
+                    <th class="col-3">@Html.DisplayNameFor(model => model.Address)</th>
+                    <th class="col-2">@Html.DisplayNameFor(model => model.EmailAdress)</th>
+                    <th class="col-2">@Html.DisplayNameFor(model => model.ContactsDetails)</th>
+
+                    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                    {
+                       
+                    }
+                    <th>Actions</th>
+                    </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td class="align-middle px-4">
+    <img class="rounded-circle" src="@item.Logo" alt="@item.Name" style="max-width: 150px" />
+</td>
+                    <td class="align-middle">
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td class="align-middle">
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>
+                     <td class="align-middle">
+                        @Html.DisplayFor(modelItem => item.EmailAdress)
+                    </td>
+                     <td class="align-middle">
+                        @Html.DisplayFor(modelItem => item.ContactsDetails)
+                    </td>
+                    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                    {
+                       <td class="align-middle button-container">
+                          <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i>Edit </a> |
+                            
+                           <a class="btn btn-danger text-white" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash"></i>Delete </a>|
+                          </td>
+                    }
+                    <td>
+    <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-eye"></i>Details </a> 
+                    </td>
+              
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+
+    </div>
+</div>
+
+@await Html.PartialAsync("_CreateItem", "Store") 

@@ -1,0 +1,66 @@
+﻿@using Gugu.Data.ViewModels
+@model RegisterVM
+@{
+    ViewData["Title"] = "Create new Student account";
+}
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h4 class="mb-4">@ViewData["Title"]</h4>
+
+            @if (TempData["Error"] != null)
+            {
+                <div class="alert alert-danger">
+                    <b>Sorry!</b> - @TempData["Error"]
+                </div>
+            }
+
+            <form asp-action="Register" class="needs-validation" novalidate>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="FullName" class="control-label">Full Name</label>
+                    <input asp-for="FullName" class="form-control" placeholder="Enter your full name" required />
+                    <span asp-validation-for="FullName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EmailAddress" class="control-label">Email Address</label>
+                    <input asp-for="EmailAddress" class="form-control" placeholder="Enter your email address" required />
+                    <span asp-validation-for="EmailAddress" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PhoneNumber" class="control-label">Phone Number</label>
+                    <input asp-for="PhoneNumber" class="form-control" type="PhoneNumber" placeholder="Phone Number" required />
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DateofBirth" class="control-label">Date of Birth</label>
+                    <input asp-for="DateofBirth" class="form-control" type="date" required />
+                    <span asp-validation-for="DateofBirth" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Password" class="control-label">Password</label>
+                    <input asp-for="Password" class="form-control" type="password" placeholder="Create password" required />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ConfirmPassword" class="control-label">Confirm Password</label>
+                    <input asp-for="ConfirmPassword" class="form-control" type="password" placeholder="Confirm password" required />
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block" type="submit">Create Account</button>
+                    <a class="btn btn-secondary btn-cancel btn-block" asp-controller="Account" asp-action="Users">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
