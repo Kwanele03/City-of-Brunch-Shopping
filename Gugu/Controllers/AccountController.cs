@@ -134,7 +134,6 @@ namespace AppIncrements.Controllers
 
             if (!result.Succeeded)
             {
-                // Handle error during deletion
                 TempData["Error"] = "Error deleting user.";
             }
 
