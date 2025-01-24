@@ -78,8 +78,5 @@ namespace Gugu.Controllers
 
             return View("OrderCompleted");
         }
-
-
-
     }
 }
