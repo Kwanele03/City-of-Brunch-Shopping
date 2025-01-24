@@ -18,7 +18,6 @@ namespace Gugu.Controllers
             _service = service;
         }
         
-
         [AllowAnonymous]
         public async Task<IActionResult> Filter(string searchString)
         {
@@ -27,7 +26,6 @@ namespace Gugu.Controllers
             if (!string.IsNullOrEmpty(searchString))
             {
                 var filteredResult = allProducts.Where(n => n.Item.ToLower().Contains(searchString.ToLower()) || n.Category.ToLower().Contains(searchString.ToLower())).ToList();
-
                 var filteredResultNew = allProducts.Where(n => string.Equals(n.Item, searchString, StringComparison.CurrentCultureIgnoreCase) || string.Equals(n.Category, searchString, StringComparison.CurrentCultureIgnoreCase)).ToList();
 
                 if (filteredResultNew.Count == 0)
@@ -48,7 +46,6 @@ namespace Gugu.Controllers
             return View(data);
         }
 
-       
         public IActionResult Create()
         {
             return View();
@@ -65,7 +62,7 @@ namespace Gugu.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        //Get: Actors/Details/1
+       
         [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {
@@ -75,7 +72,7 @@ namespace Gugu.Controllers
             return View(productDetails);
         }
 
-        //Get: Actors/Edit/1
+      
         public async Task<IActionResult> Edit(int id)
         {
             var actorDetails = await _service.GetByIdAsync(id);
@@ -95,7 +92,6 @@ namespace Gugu.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        //Get: Actors/Delete/1
         public async Task<IActionResult> Delete(int id)
         {
             var productDetails = await _service.GetByIdAsync(id);
