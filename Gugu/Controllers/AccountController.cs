@@ -18,12 +18,11 @@ namespace AppIncrements.Controllers
         private readonly AppDbContext _context;
 
 
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, AppDbContext context/*, EmailVerifier emailVerifier*/)
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, AppDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _context = context;
-        
         }
 
        
@@ -67,8 +66,6 @@ namespace AppIncrements.Controllers
         {
             return View();
         }
-
-   
 
 
         [Authorize(Roles = UserRoles.Admin1)]
