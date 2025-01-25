@@ -26,7 +26,6 @@ namespace Gugu.Controllers
             }
 
 
-            ////Get: Cinemas/Create
             public IActionResult Create()
             {
                 return View();
@@ -40,7 +39,7 @@ namespace Gugu.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            //Get: Cinemas/Details/1
+         
             [AllowAnonymous]
             public async Task<IActionResult> Details(int id)
             {
@@ -49,7 +48,7 @@ namespace Gugu.Controllers
                 return View(storeDetails);
             }
 
-            //Get: Cinemas/Edit/1
+           
             public async Task<IActionResult> Edit(int id)
             {
                 var storeDetails = await _service.GetByIdAsync(id);
@@ -65,23 +64,6 @@ namespace Gugu.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            ////Get: Cinemas/Delete/1
-            //public async Task<IActionResult> Delete(int id)
-            //{
-            //    var storeDetails = await _service.GetByIdAsync(id);
-            //    if (storeDetails == null) return View("NotFound");
-            //    return View(storeDetails);
-            //}
-
-            //[HttpPost, ActionName("Delete")]
-            //public async Task<IActionResult> DeleteConfirm(int id)
-            //{
-            //    var storeDetails = await _service.GetByIdAsync(id);
-            //    if (storeDetails == null) return View("NotFound");
-
-            //    await _service.DeleteAsync(id);
-            //    return RedirectToAction(nameof(Index));
-            //}
         }
     }
 
