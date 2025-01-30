@@ -31,7 +31,7 @@ namespace Gugu.Models
         [Display(Name = "Contact Details")]
         public int ContactsDetails { get; set; }
 
-        //Relationships
+    
         public List<Product> Products { get; set; }
     }
 }
