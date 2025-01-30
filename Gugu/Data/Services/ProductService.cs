@@ -3,7 +3,6 @@ using Gugu.Data.ViewModels;
 using Gugu.Models;
 using Microsoft.EntityFrameworkCore;
 
-
 namespace Gugu.Data.Services
 {
     public class ProductService : EntityBaseRepository<Product>, IProductService
@@ -21,6 +20,7 @@ namespace Gugu.Data.Services
             _context.Products.Add(product);
             await _context.SaveChangesAsync();
         }
+        
         public void Delete(int ProductId)
         {
             throw new NotImplementedException();
@@ -31,6 +31,7 @@ namespace Gugu.Data.Services
             var result = await _context.Products.ToListAsync();
             return result;
         }
+        
         public async Task<Product> GetByIdAsync(int Id)
         {
             var result = await _context.Products.FirstOrDefaultAsync(n => n.Id == Id);
@@ -43,5 +44,6 @@ namespace Gugu.Data.Services
             await _context.SaveChangesAsync();
             return newProduct;
         }
+        
     }
 }
