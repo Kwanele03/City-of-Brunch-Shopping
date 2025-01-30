@@ -1,8 +1,6 @@
-﻿
-using Gugu.Data.Static;
+﻿using Gugu.Data.Static;
 using Gugu.Models;
 using Microsoft.AspNetCore.Identity;
-
 
 namespace Gugu.Data
 {
@@ -287,7 +285,7 @@ namespace Gugu.Data
 
                 string adminUserEmail = "admin@cob.com";
                 string adminUserEmail1 = "admin1@ukzn.com";
-                string adminUserEmail2 = "admin2@shoprite.com"; // Add the third admin's email
+                string adminUserEmail2 = "admin2@shoprite.com"; 
 
                 var adminUser = await userManager.FindByEmailAsync(adminUserEmail);
                 if (adminUser == null)
@@ -311,7 +309,7 @@ namespace Gugu.Data
                     var newAdminUser1 = new ApplicationUser()
                     {
                         FullName = "Admin User 1",
-                        UserName = "Mjakhura", // Provide a unique username
+                        UserName = "Mjakhura", 
                         PhoneNumber = 0782630401,
                         DateofBirth = new DateTime(23 / 2 / 2000),
                         Email = adminUserEmail1,
@@ -327,7 +325,7 @@ namespace Gugu.Data
                     var newAdminUser2 = new ApplicationUser()
                     {
                         FullName = "Admin User 2",
-                        UserName = "Mbuso", // Provide a unique username
+                        UserName = "Mbuso", 
                         PhoneNumber = 0782630401,
                         DateofBirth = new DateTime(23 / 2 / 2000),
                         Email = adminUserEmail2,
