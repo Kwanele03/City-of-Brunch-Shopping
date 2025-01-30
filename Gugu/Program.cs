@@ -27,10 +27,6 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IOrderService, OrderServices>();
 builder.Services.AddScoped<IStoreService, StoreService>();
 
-
-
-
-
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddScoped(sc => ShoppingCart.GetShoppingCart(sc));
 builder.Services.AddSession();
@@ -38,7 +34,6 @@ builder.Services.AddSession();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -59,8 +54,6 @@ app.UseSession();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.UseAuthorization();
-
 
 app.UseEndpoints(endpoints =>
 {
@@ -71,6 +64,5 @@ app.UseEndpoints(endpoints =>
 
 AppDbInitializer.Seed(app);
 AppDbInitializer.SeedUsersAndRolesAsync(app).Wait();
-
 
 app.Run();
