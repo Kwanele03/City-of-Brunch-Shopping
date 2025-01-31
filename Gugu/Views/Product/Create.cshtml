@@ -1,7 +1,5 @@
 ﻿@using Gugu.Models
 @model Product
-
-
 @{
 	ViewData["Title"] = "Create a Product";
 }
@@ -43,12 +41,8 @@
 						<input asp-for="Price" class="form-control" />
 					<span asp-validation-for="Price" class="text-danger"></span>
 				</div>
-
-			
 						  <button  class="btn btn-primary" type="submit">Create</button>
-			
 					<a class="btn btn-outline-secondary" asp-action="Index">Show All</a>
-			
 				</form>
 			</div>
 		</div>
