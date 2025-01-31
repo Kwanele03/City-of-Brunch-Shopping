@@ -6,12 +6,6 @@
     ViewData["Title"] = "List of Stores";
 }
 
-@*<style>
-table, th, td {
-  border: 10px solid;
-}
-</style>*@
-
 <div class="row">
     <div class="col-md-8 offset-md-2">
 <table class="table table-bordered table-dark table-hover mt-4 mb-4">
@@ -59,15 +53,12 @@ table, th, td {
                           </td>
                     }
                     <td>
-    <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-eye"></i>Details </a> 
+                     <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-eye"></i>Details </a> 
                     </td>
-              
                     </tr>
                 }
-            </tbody>
-
+         </tbody>
         </table>
-
     </div>
 </div>
 
