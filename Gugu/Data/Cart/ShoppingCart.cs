@@ -40,7 +40,6 @@ namespace Gugu.Data.Cart
                     Product = product,
                     Amount = 1
                 };
-
                 _context.ShoppingCartItems.Add(shoppingCartItem);
             }
             else
